@@ -135,5 +135,8 @@ const fn = () => ['a', 1, true]
 type test13 = ReturnType<typeof fn>
 
 // ReturnType 实现
-type MyReturnType<F extends Function> = F extends (...args: any[]) => infer R ? R : never
+// 利用infer提取函数返回值类型
+type MyReturnType<F extends Function> = F extends (...args: any) => infer R ? R : never
+// typeof fn 将具体函数转换为类型，相当于
+// type fn = () => ['a', 1, true]
 type test14 = MyReturnType<typeof fn>
