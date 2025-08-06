@@ -1,5 +1,10 @@
 {
     "compilerOptions": {
         "strict": true
-    }
+    },
+    // 指定要编译的文件模式
+    "include": [
+        "src/**/*",
+        "types/**/*"
+    ]
 }
